@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: src/main/docker/Dockerfile.multistage
+      #dockerfile: src/main/docker/Dockerfile.alpine
     ports:
       - 8080:8080
     networks:
