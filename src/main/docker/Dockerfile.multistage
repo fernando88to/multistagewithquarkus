@@ -8,10 +8,8 @@ COPY ./settings.gradle /app/settings.gradle
 COPY ./src /app/src
 WORKDIR /app
 RUN gradle build
-ENTRYPOINT ["tail", "-f", "/dev/null"]
 
-
-FROM registry.access.redhat.com/ubi8/openjdk-17
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.11
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 
