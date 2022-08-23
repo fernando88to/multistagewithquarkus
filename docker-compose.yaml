@@ -5,8 +5,12 @@ services:
     hostname: app
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: src/main/docker/Dockerfile.multistage
     ports:
       - 8080:8080
-    tty: true
+    networks:
+      - default
 
+networks:
+  default:
+    driver: bridge
